@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>403 Forbidden</title>
+</head>
+<body>
+
+
+  <?php echo form_open('tests/save', 'role="form"'); ?>
+    <div class="form-group">
+      <label for="date">Fecha</label>
+      <input type="text" class="form-control" id="date" name="date">
+    </div>
+		<button name="submit">Guardar</button>
+	<?php form_close(); ?>
+
+<table>
+	<thead>
+		<td>Fechas</td>
+	</thead>
+	<tbody>
+	<?php foreach($test as $d): ?>	
+		<tr>
+		<td><?php echo $d->date; ?></td>
+		<td><a href="<?php echo base_url('tests/remove/'.$d->id); ?>">remove</a></td>
+		
+		</tr>
+	<?php endforeach; ?>
+	</tbody>
+</table>
+
+</body>
+</html>
